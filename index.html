@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gabriel – Frontend Developer & Comedy Creator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+      }
+      .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-gray-800 font-sans">
+
+    <!-- Hero -->
+    <section class="text-center py-16 bg-gradient-to-r from-indigo-500 to-blue-600 text-white fade-in">
+      <h1 class="text-4xl font-bold mb-4 animate-bounce">Hi, I'm Gabriel 👋</h1>
+      <p class="text-xl">Junior Frontend Developer + Comedy Creator 🎭</p>
+      <p class="mt-2">I build clean, fun, and functional websites using HTML, CSS, JavaScript & Tailwind.</p>
+      <a href="#projects" class="mt-6 inline-block bg-white text-indigo-700 font-bold py-2 px-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300">See My Projects</a>
+    </section>
+
+    <!-- About -->
+    <section class="py-12 px-4 max-w-3xl mx-auto fade-in">
+      <h2 class="text-2xl font-semibold mb-4">👨🏽‍💻 About Me</h2>
+      <p>
+        I'm a junior frontend developer with a passion for clean UI and smooth interactions. I also run a YouTube comedy series called <strong>“Hold On… Again!”</strong> — where I mix tech skills with creative humor.
+      </p>
+      <p class="mt-2">
+        I'm currently open for freelance projects: website design, bug fixes, or creating funny interactive UI experiences.
+      </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="bg-white py-12 px-4 fade-in">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-semibold mb-6">🚀 Projects</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Project 1 -->
+          <div class="bg-slate-100 p-4 rounded-xl shadow transform hover:scale-105 transition-transform duration-300">
+            <h3 class="font-bold text-lg">🔢 Calculator App</h3>
+            <p class="text-sm">A clean, responsive calculator built with HTML, CSS, and JS.</p>
+          </div>
+          <!-- Project 2 -->
+          <div class="bg-slate-100 p-4 rounded-xl shadow transform hover:scale-105 transition-transform duration-300">
+            <h3 class="font-bold text-lg">📝 To-Do List</h3>
+            <p class="text-sm">Manage tasks with a minimal UI and JavaScript DOM logic.</p>
+          </div>
+          <!-- Project 3 -->
+          <div class="bg-slate-100 p-4 rounded-xl shadow transform hover:scale-105 transition-transform duration-300">
+            <h3 class="font-bold text-lg">🎨 Background Color Changer</h3>
+            <p class="text-sm">Click to randomize background colors with smooth transitions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="py-12 px-4 max-w-4xl mx-auto fade-in">
+      <h2 class="text-2xl font-semibold mb-4">🛠️ Tech Skills</h2>
+      <ul class="flex flex-wrap gap-4">
+        <li class="bg-indigo-100 px-4 py-2 rounded-full">HTML5</li>
+        <li class="bg-blue-100 px-4 py-2 rounded-full">CSS3</li>
+        <li class="bg-yellow-100 px-4 py-2 rounded-full">JavaScript</li>
+        <li class="bg-teal-100 px-4 py-2 rounded-full">Tailwind CSS</li>
+        <li class="bg-gray-200 px-4 py-2 rounded-full">Responsive Design</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section class="bg-blue-100 py-12 text-center fade-in">
+      <h2 class="text-2xl font-semibold mb-2">📬 Contact Me</h2>
+      <p>Email: <a href="mailto:yourname@email.com" class="underline">zomayi.gabriel@email.com</a></p>
+      <p class="mt-1">Or find me on YouTube: <strong>Hold On… Again!</strong></p>
+    </section>
+
+    <footer class="text-center py-4 text-sm text-gray-600">
+      &copy; 2025 Gabriel – Frontend Dev & Creator
+    </footer>
+
+    <script>
+      // Fade-in animation on scroll
+      const faders = document.querySelectorAll('.fade-in');
+      const appearOptions = { threshold: 0.1 };
+      const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+    </script>
+  </body>
+</html>
