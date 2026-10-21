@@ -181,10 +181,13 @@ header p {
   background-color: var(--accent);
   color: white;
   border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background 0.2s;
+  margin-top: 15px;
 }
 #downloadPDF:hover {
   background-color: var(--accent-hover);
